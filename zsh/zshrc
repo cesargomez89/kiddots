@@ -1,0 +1,52 @@
+# ~/.zshrc
+
+EDITOR=nvim
+git config --global core.editor "nvim"
+
+# history defaults
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
+
+# load all the files in .dotfiles/zsh/aliases
+for file in ~/.dotfiles/zsh/aliases/*.zsh; do
+    source $file
+done
+
+# load all the files in .dotfiles/zsh/functions
+for file in ~/.dotfiles/zsh/functions/*.zsh; do
+    source $file
+done
+
+# prompt
+eval "$(starship init zsh)"
+
+# antigen plugins
+source ~/.antidote/antidote.zsh
+antidote load
+
+# history substring search
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+HISTORY_SUBSTRING_SEARCH_FUZZY=1
+HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
+
+setopt BANG_HIST
+setopt EXTENDED_HISTORY
+setopt SHARE_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_VERIFY
+setopt HIST_BEEP
+
+# fnm
+FNM_PATH="/home/cesar/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/cesar/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi

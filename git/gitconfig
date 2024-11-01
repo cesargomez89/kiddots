@@ -1,0 +1,6 @@
+[core]
+  excludesfile = ~/.dotfiles/git/gitignore
+	editor = nvim
+
+[credential]
+  helper = credential-osxkeychain

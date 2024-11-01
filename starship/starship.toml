@@ -1,0 +1,58 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+#
+# prezto - mimic the default prezto prompt (sorin)
+#
+
+add_newline = false
+
+# A minimal left prompt
+format = """$directory$character"""
+
+# move the rest of the prompt to the right
+right_format = """$status$git_branch$git_status$ruby"""
+
+[character]
+success_symbol = "[](purple)"
+error_symbol = "[](red)"
+
+[git_branch]
+format = '[$branch]($style) '
+style = 'bold cyan'
+
+[python]
+format = '[(\($virtualenv\) )]($style)'
+style = 'white'
+
+[ruby]
+format = '[$symbol($version )]($style)'
+symbol = ' '
+
+[git_status]
+format = '$all_status$ahead_behind '
+ahead = '[](bold purple) '
+behind = '[](bold purple) '
+staged = '[](green) '
+deleted = '[](red) '
+renamed = '[](purple) '
+stashed = '[󰁯](cyan) '
+untracked = '[](white) '
+modified = '[](blue) '
+conflicted = '[󰶻](yellow) '
+diverged = ' '
+up_to_date = ''
+
+[directory]
+style = "blue"
+truncation_length = 1
+truncation_symbol = ""
+fish_style_pwd_dir_length = 1
+
+[cmd_duration]
+format = '[$duration]($style) '
+
+[line_break]
+disabled = true
+
+[status]
+disabled = false
+symbol = '✘ '
