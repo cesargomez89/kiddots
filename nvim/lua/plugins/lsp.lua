@@ -23,13 +23,11 @@ return {
       lspconfig.ruby_lsp.setup({ capabilities = capabilities })
 
       vim.diagnostic.config({
+        update_in_insert = false,
         virtual_text = {
           prefix = "",
           spacing = 1,
         },
-        underline = false,
-        signs = true,
-        update_in_insert = false,
       })
 
       for _, diag in ipairs({ "Error", "Warn", "Info", "Hint" }) do

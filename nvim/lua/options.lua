@@ -1,3 +1,5 @@
+vim.api.nvim_command("set updatetime=1500")
+
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 

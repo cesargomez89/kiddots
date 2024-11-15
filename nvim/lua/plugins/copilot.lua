@@ -3,8 +3,20 @@ return {
     "CopilotC-Nvim/CopilotChat.nvim",
     branch = "canary",
     opts = {
-      auto_insert_mode = true,
+      auto_insert_mode = false,
       show_help = true,
+      window = {
+        layout = 'float',
+        width = 0.4,
+        height = 0.9,
+        relative = 'editor',
+        border = 'rounded',
+        row = nil,
+        col = nil,
+        title = ' Copilot',
+        footer = nil,
+        zindex = 1,
+      },
     },
     keys = {
       { "<c-s>", "<CR>", ft = "copilot-chat", desc = "Submit Prompt", remap = true },

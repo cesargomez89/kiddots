@@ -43,7 +43,7 @@
   alias gp='git push'
   alias gpf='git push --force-with-lease'
   alias gpF='git push --force'
-  alias gpc='git push --set-upstream origin "$(git-branch-current 2> /dev/null)"'
+  alias gpc='git push --set-upstream origin "$(git branch --show-current)"'
   alias gpp='git pull origin "$(git-branch-current 2> /dev/null)" && git push origin "$(git-branch-current 2> /dev/null)"'
 
   # Rebase (r)
