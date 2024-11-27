@@ -86,6 +86,8 @@ ln -fs ~/.dotfiles/kitty ~/.config
 ln -fs ~/.dotfiles/git/gitconfig ~/.gitconfig
 ln -fs ~/.dotfiles/starship/starship.toml ~/.config/starship.toml
 
+touch ~/.zshrc_profile
+
 echo "Download fonts to  ~/.dotfiles/fonts"
 ./fonts/download.sh
 

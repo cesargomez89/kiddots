@@ -1,3 +1,5 @@
+-- Enable copilot completion by appending the commented lines to your existing completion.lua
+-- or just replace the full content and uncomment the lines.
 return {
   "nvim-cmp",
   dependencies = {
@@ -5,7 +7,9 @@ return {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
+      -- "zbirenbaum/copilot-cmp",
       "onsails/lspkind.nvim",
+      -- dependencies = "copilot.lua",
       "L3MON4D3/LuaSnip",
       dependencies = {
         "saadparwaiz1/cmp_luasnip",
@@ -16,6 +20,7 @@ return {
   config = function()
     local cmp = require('cmp')
     local lspkind = require('lspkind')
+    -- require("copilot_cmp").setup()
     require("luasnip.loaders.from_vscode").lazy_load()
 
     local has_words_before = function()
@@ -35,10 +40,10 @@ return {
         documentation = cmp.config.window.bordered(),
       },
       sources = cmp.config.sources({
-        { name = "buffer", group_index = 2 },
-        { name = "codeium", group_index = 2 },
         { name = "nvim_lsp", group_index = 2 },
         { name = "path", group_index = 2 },
+        { name = "buffer", group_index = 2 },
+        -- { name = "copilot", group_index = 2 },
         { name = "luasnip", group_index = 2 },
       }),
       mapping = cmp.mapping.preset.insert({
@@ -62,7 +67,7 @@ return {
             menu = 50,
             abbr = 50,
           },
-          symbol_map = { Copilot = "", Codeium = "" },
+          symbol_map = { Copilot = "" },
           ellipsis_char = '...',
           show_labelDetails = true,
           before = function (entry, vim_item)

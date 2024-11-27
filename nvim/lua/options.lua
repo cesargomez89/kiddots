@@ -17,3 +17,5 @@ vim.api.nvim_set_keymap('n', '$', 'g_', { noremap = true, silent = true })
 vim.cmd([[
   cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 ]])
+
+vim.api.nvim_set_keymap('n', 'yp', [[:lua vim.fn.setreg('+', vim.fn.expand('%') .. ':' .. vim.fn.line('.'))<CR>]], { noremap = true, silent = true })
