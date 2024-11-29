@@ -4,9 +4,14 @@ return {
   lazy = false,
   version = false,
   opts = {
-    provider = "openai",
-    openai = {
-      model = "gpt-4o-mini"
+    provider = "deepseek",
+    vendors = {
+      deepseek = {
+        __inherited_from = "openai",
+        api_key_name = "DEEPSEEK_API_KEY",
+        endpoint = "https://api.deepseek.com/beta",
+        model = "deepseek-coder",
+      },
     },
   },
   build = "make",
@@ -25,7 +30,6 @@ return {
           drag_and_drop = {
             insert_mode = true,
           },
-          -- required for Windows users
           use_absolute_path = true,
         },
       },
