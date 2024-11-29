@@ -1,83 +1,85 @@
 # KIDD🌀TS - Minimalistic Dotfiles for Developers
 
----
+## 🌟 Overview
 
-## Description
+KIDD🌀TS is a carefully crafted collection of dotfiles designed to create a productive, efficient, and streamlined development environment. With a focus on simplicity, performance, and usability, this setup empowers developers to work smarter, not harder.
 
-KIDD🌀TS is a collection of minimalistic dotfiles designed to provide a productive development environment with a focus on simplicity, performance, and usability.
+## 🛠 Tools Ecosystem
 
-## Tools
+### Terminal & Shell
+- **[🐱 Kitty](https://sw.kovidgoyal.net/kitty/)**: A lightning-fast, GPU-accelerated terminal emulator
+- **[⬛ Zsh](https://www.zsh.org/)**: A powerful shell with extensive customization capabilities
+- **[💉 Antidote](https://getantidote.github.io/)**: Efficient Zsh plugin management
 
-This setup includes the following tools:
+### Productivity Boosters
+- **[🚀 Starship](https://starship.rs/)**: A minimal and blazing-fast cross-shell prompt
+- **[🪟 Tmux](https://tmux.github.io/)**: Terminal multiplexer for managing multiple sessions
+- **[🔌 TPM](https://github.com/tmux-plugins/tpm)**: Streamlined Tmux plugin management
 
-- **[🐱 Kitty](https://sw.kovidgoyal.net/kitty/)** – A fast, feature-rich, GPU-based terminal emulator.
-- **[⬛ Zsh](https://www.zsh.org/)** – A powerful shell with customizable features and plugins.
-- **[💉 Antidote](https://getantidote.github.io/)** – A plugin manager for Zsh to help with organizing your shell plugins.
-- **[🚀 Starship](https://starship.rs/)** – A minimal, fast, and customizable prompt for any shell.
-- **[🪟 Tmux](https://tmux.github.io/)** – A terminal multiplexer to manage multiple terminal windows and panes.
-- **[🔌 TPM](https://github.com/tmux-plugins/tpm)** – Tmux Plugin Manager for easy management of Tmux plugins. **[📓 Neovim](https://neovim.io/)** – A modern, extensible text editor, designed for power users.
+### Development
+- **[📓 Neovim](https://neovim.io/)**: Modern, extensible text editor for power users
 
-## Dependencies
+## 🔧 System Requirements
 
-- **Neovim** v0.10+
-- **Kitty Terminal** v0.32+
-- **[Eza](https://github.com/eza-community/eza)** – A modern replacement for `ls` with extra features and better usability.
-## Installation
+### Minimum Dependencies
+- Neovim v0.10+
+- Kitty Terminal v0.32+
+- [Eza](https://github.com/eza-community/eza): Modern `ls` replacement
 
-To get started with KIDD🌀TS, simply run the following command:
+## 🚀 Quick Start
+
+### Installation
+Install KIDD🌀TS with a single command:
 
 ```bash
 curl -s https://raw.githubusercontent.com/cesargomez89/kiddots/main/install.sh | bash
 ```
 
-This script will automatically install the necessary dependencies and configure the dotfiles for your environment.
+## 🌈 Key Features
 
-## Kitty Configuration
+### Kitty Navigation Shortcuts
 
-### Navigation
+#### Pane & Window Movement
+- `Ctrl + h/j/k/l`: Seamless navigation between panes and windows
+- `Ctrl + Shift + Left/Right Arrow`: Quick tab switching
+- `Ctrl + TAB`: Cycle through tabs
+- `Ctrl + Shift + t`: Instantly open new tabs
+- `Ctrl + Shift + l`: Toggle layout between standard and zoomed
 
-- **Pane Navigation (Neovim):**
-  - `Ctrl + h/j/k/l` – Move between panes or windows in Kitty.
-  
-- **Tab Navigation:**
-  - `Ctrl + Shift + Left/Right Arrow` – Switch between open tabs.
-  - `Ctrl + TAB` – Cycle through tabs in order.
-  
-- **Create New Tab:**
-  - `Ctrl + Shift + t` – Open a new tab.
-  
-- **Alternate Layout (Zoom):**
-  - `Ctrl + Shift + l` – Toggle between standard and zoomed layout.
+### Shell Productivity
+- Comprehensive set of shell aliases
+- Detailed alias documentation available in [ALIASES.md](ALIASES.md)
 
-## Shell Aliases
+### Neovim Configuration
 
-KIDD🌀TS comes with a variety of useful shell aliases to improve your workflow. For a full list of available aliases, refer to the [Aliases documentation](ALIASES.md).
+#### Core Setup
+- **Package Manager**: Lazy.nvim
+- **Plugins**: Curated collection in [lua plugins](./nvim/lua/plugins/)
+- **Customizations**: Detailed in [options.lua](/nvim/lua/options.lua)
+- **AI Assistance**: [Codeium](https://codeium.com/) integration
 
-## Neovim Configuration
+#### Keyboard Shortcuts
+- **Leader Key**: Space
+- **Neotree Toggle**: `leader + fe`
 
-Package manager: Lazy.nvim
+## 📸 Visual Preview
 
-Plugins: [lua plugins](./nvim/lua/plugins/)
+### Development Environment Screenshots
+![Workspace Overview](./screenshots/1.png)
+![Terminal Setup](./screenshots/2.png)
+![Neovim Interface](./screenshots/3.png)
 
-Customizations: [options.lua](/nvim/lua/options.lua)
+## 🤝 Contributing
 
-AI completion: [Codeium](https://codeium.com/)
+We welcome contributions! To get involved:
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Submit a pull request
 
-## Screenshots
+## 🔗 Project Links
+- **Source Code**: [GitHub Repository](https://github.com/cesargomez89/kiddots)
+- **Issues**: [GitHub Issues](https://github.com/cesargomez89/kiddots/issues)
 
-Here are a few screenshots showcasing the look and feel of the KIDD🌀TS setup:
-
-![Screenshot 1](./screenshots/1.png)
-
-![Screenshot 2](./screenshots/2.png)
-
-![Screenshot 3](./screenshots/3.png)
-
----
-
-## Contributing
-
-Contributions are welcome! If you'd like to contribute, please fork the repository and submit a pull request.
-
-## Source Code
-The source code for KIDD🌀TS is available on [Github](https://github.com/cesargomez89/kiddots)
+**Made with ❤️ by Developers, for Developers**
