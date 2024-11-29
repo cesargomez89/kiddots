@@ -56,11 +56,44 @@ curl -s https://raw.githubusercontent.com/cesargomez89/kiddots/main/install.sh |
 - **Package Manager**: Lazy.nvim
 - **Plugins**: Curated collection in [lua plugins](./nvim/lua/plugins/)
 - **Customizations**: Detailed in [options.lua](/nvim/lua/options.lua)
-- **AI Assistance**: [Codeium](https://codeium.com/) integration
+- **AI Assistance**:
+  - [Codeium](https://codeium.com/)
+  - [Supermaven](https://supermaven.com/)
+  - [Avante.nvim](https://github.com/yetone/avante.nvim)
 
 #### Keyboard Shortcuts
 - **Leader Key**: Space
 - **Neotree Toggle**: `leader + fe`
+
+#### AI Chat
+
+**[💬 Avante.nvim](https://github.com/yourgithublink/avante.nvim)**: Seamless AI chat integration directly within Neovim
+
+- sources:
+  - [gemini](https://ai.google.dev/) (default/free) - requires an API key (GEMINI_API_KEY)
+
+shortcuts:
+- <leader> + aa: open AI chat
+- <Control> + s Submit prompt 
+
+#### AI Autocompletion
+- **[🤖 Codeium](https://codeium.com/)**: Intelligent code suggestions powered by AI (Virtual Text + cmp)
+- **[⚡️ Supermaven](https://supermaven.com/)**: Advanced AI-driven code completion (cmp)
+
+**Integration with nvim-cmp**
+
+- sources:
+  - supermaven
+  - codeium
+  - luasnip
+  - lsp
+  - buffer
+  - path
+
+- shortcuts:
+  - <Tab> next item
+  - <S-Tab> previous item
+  - <Enter> accept suggestion
 
 ## 📸 Visual Preview
 

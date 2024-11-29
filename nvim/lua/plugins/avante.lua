@@ -4,7 +4,10 @@ return {
   lazy = false,
   version = false,
   opts = {
-    provider = "deepseek",
+    provider = "gemini",
+    gemini = {
+      model = "gemini-1.5-pro-latest",
+    },
     vendors = {
       deepseek = {
         __inherited_from = "openai",
