@@ -3,7 +3,7 @@
 # prezto - mimic the default prezto prompt (sorin)
 #
 
-add_newline = false
+add_newline = true
 
 # A minimal left prompt
 format = """$directory$character"""

@@ -51,8 +51,7 @@ return {
         },
         sources = cmp.config.sources({
           -- { name = "copilot", group_index = 2 },
-          { name = "supermaven", group_index = 2, max_item_count = 3 },
-          { name = "codeium", group_index = 2, max_item_count = 3  },
+          -- { name = "supermaven", group_index = 2, max_item_count = 3 },
           { name = "luasnip", group_index = 2, max_item_count = 3  },
           { name = "lsp", group_index = 2, max_item_count = 3  },
           { name = "buffer", group_index = 2, max_item_count = 5  },
@@ -80,7 +79,6 @@ return {
             },
             symbol_map = {
               Copilot = "",
-              Codeium = "",
               Supermaven = "󱐋",
             },
             ellipsis_char = '...',
