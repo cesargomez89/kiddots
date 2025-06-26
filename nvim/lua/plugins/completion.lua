@@ -7,10 +7,10 @@ return {
       "rafamadriz/friendly-snippets",
       config = function()
         require("luasnip.loaders.from_vscode").lazy_load()
-        require'luasnip'.filetype_extend("ruby", {"rails"})
-        require'luasnip'.filetype_extend("ruby", {"rdoc"})
-        require'luasnip'.filetype_extend("eruby", {"rails"})
-        require'luasnip'.filetype_extend("eruby", {"html"})
+        require 'luasnip'.filetype_extend("ruby", { "rails" })
+        require 'luasnip'.filetype_extend("ruby", { "rdoc" })
+        require 'luasnip'.filetype_extend("eruby", { "rails" })
+        require 'luasnip'.filetype_extend("eruby", { "html" })
       end,
     },
     config = function()
@@ -34,7 +34,7 @@ return {
       local cmp = require('cmp')
       local lspkind = require('lspkind')
 
-      vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
+      vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 
       cmp.setup({
         snippet = {
@@ -52,10 +52,11 @@ return {
         sources = cmp.config.sources({
           -- { name = "copilot", group_index = 2 },
           -- { name = "supermaven", group_index = 2, max_item_count = 3 },
-          { name = "luasnip", group_index = 2, max_item_count = 3  },
-          { name = "lsp", group_index = 2, max_item_count = 3  },
-          { name = "buffer", group_index = 2, max_item_count = 5  },
-          { name = "path", group_index = 5 },
+          { name = "cmp_ai",  group_index = 2, max_item_count = 3 },
+          { name = "luasnip", group_index = 2, max_item_count = 3 },
+          { name = "lsp",     group_index = 2, max_item_count = 3 },
+          { name = "buffer",  group_index = 2, max_item_count = 5 },
+          { name = "path",    group_index = 5 },
         }),
         mapping = cmp.mapping.preset.insert({
           ['<C-b>'] = cmp.mapping.scroll_docs(-4),

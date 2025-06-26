@@ -4,15 +4,16 @@ return {
   lazy = false,
   version = false,
   opts = {
+    provider = "gemini",
     providers = {
       gemini = {
-        model = "gemini-1.5-pro-latest",
+        model = "gemini-2.5-flash-preview-05-20",
       },
       deepseek = {
         __inherited_from = "openai",
         api_key_name = "DEEPSEEK_API_KEY",
         endpoint = "https://api.deepseek.com/beta",
-        model = "deepseek-coder",
+        model = "deepseek-chat",
       },
     }
   },
