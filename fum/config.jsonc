@@ -1,0 +1,43 @@
+{
+  "players": ["spotify", "lollypop", "org.mpris.MediaPlayer2.mpv", "com.github.th_ch.youtube_music", "chrome"],
+  "width": 43,
+  "height": 8,
+  "direction": "horizontal",
+  "layout": [
+    { "type": "cover-art" },
+    { "type": "empty", "size": 2 },
+    {
+      "type": "container",
+      "direction": "vertical",
+      "children": [
+        { "type": "label", "text": "󰝚 $title" },
+        { "type": "label", "text": "󰠃 $artists" },
+        { "type": "label", "text": " $album" },
+
+        { "type": "container", "children": [] },
+        {
+          "type": "container",
+          "height": 1,
+          "children": [
+            { "type": "button", "text": "󰒮", "action": "prev()" },
+            { "type": "empty", "size": 3 },
+            { "type": "button", "text": "$status-icon", "action": "play_pause()" },
+            { "type": "empty", "size": 3 },
+            { "type": "button", "text": "󰒭", "action": "next()" }
+          ]
+        },
+        { "type": "progress", "progress": { "char": "" }, "empty": { "char": "-" } },
+        {
+          "type": "container",
+          "flex": "space-between",
+          "height": 1,
+          "children": [
+            { "type": "button", "text": "$position" },
+            { "type": "button", "text": "var($len-style, $length)", "action": "toggle($len-style, $length, $remaining-length)" }
+          ]
+        }
+      ]
+    }
+  ]
+}  
+

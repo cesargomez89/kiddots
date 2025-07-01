@@ -25,6 +25,11 @@ KIDD🌀TS is a carefully crafted collection of dotfiles designed to create a pr
 - Neovim v0.10+
 - Kitty Terminal v0.32+
 - [Eza](https://github.com/eza-community/eza): Modern `ls` replacement
+- zsh
+- luarocks
+
+here is what I use for my system:
+https://github.com/cesargomez89/dotflakes/blob/main/nixos/configuration.nix#L116
 
 ## 🚀 Quick Start
 
