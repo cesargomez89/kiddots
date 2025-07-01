@@ -1,17 +1,4 @@
 # dependencies
-echo "Installing dependencies..."
-
-# install dependencies if arch
-if [ -f /etc/arch-release ]; then
-  echo "Installing dependencies for Arch..."
-  sudo pacman -S git curl unzip zsh tmux neovim python luarocks eza neofetch
-fi
-
-# install dependencies if ubuntu
-if [ -f /etc/lsb-release ]; then
-  echo "Installing dependencies for Ubuntu..."
-  sudo apt install git curl unzip zsh tmux luarocks eza neofetch
-fi
 
 # install dependencies if mac
 if [ "$(uname)" == "Darwin" ]; then
