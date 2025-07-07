@@ -14,3 +14,8 @@ alias tmk="tmux kill-session -t $1"
 
 alias ls="eza --icons=auto --hyperlink --group-directories-first"
 alias la="eza --icons=auto --hyperlink --group-directories-first -la"
+
+# kitty sessions
+alias ks='ksession basic'
+alias ksd='ksession docker'
+alias ksg='ksession git'

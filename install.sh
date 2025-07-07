@@ -1,11 +1,3 @@
-# dependencies
-
-# install dependencies if mac
-if [ "$(uname)" == "Darwin" ]; then
-  echo "Installing dependencies for Mac..."
-  brew install git curl unzip zsh tmux luarocks eza neofetch
-fi
-
 # backup .dotfiles
 echo "Backing up existing dotfiles..."
 if [ -d ~/.dotfiles ]; then
