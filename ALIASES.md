@@ -9,6 +9,15 @@
 - `tma` - `tmux -2 attach -t $1`
 - `tmk` - `tmux kill-session -t $1`
 
+## Eza
+- `ls` - `eza --icons=auto --hyperlink --group-directories-first`
+- `la` - `eza --icons=auto --hyperlink --group-directories-first -la`
+
+## Kitty
+- `ks` - `ksession basic`
+- `ksd` - `ksession docker`
+- `ksg` - `ksession git`
+
 ## Git
 - `g` - `git`
 - `gb` - `git branch`

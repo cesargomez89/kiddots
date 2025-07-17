@@ -1,24 +1,3 @@
-# dependencies
-echo "Installing dependencies..."
-
-# install dependencies if arch
-if [ -f /etc/arch-release ]; then
-  echo "Installing dependencies for Arch..."
-  sudo pacman -S git curl unzip zsh tmux neovim python luarocks eza neofetch
-fi
-
-# install dependencies if ubuntu
-if [ -f /etc/lsb-release ]; then
-  echo "Installing dependencies for Ubuntu..."
-  sudo apt install git curl unzip zsh tmux luarocks eza neofetch
-fi
-
-# install dependencies if mac
-if [ "$(uname)" == "Darwin" ]; then
-  echo "Installing dependencies for Mac..."
-  brew install git curl unzip zsh tmux luarocks eza neofetch
-fi
-
 # backup .dotfiles
 echo "Backing up existing dotfiles..."
 if [ -d ~/.dotfiles ]; then
@@ -85,6 +64,7 @@ ln -fs ~/.dotfiles/nvim ~/.config
 ln -fs ~/.dotfiles/kitty ~/.config
 ln -fs ~/.dotfiles/git/gitconfig ~/.gitconfig
 ln -fs ~/.dotfiles/starship/starship.toml ~/.config/starship.toml
+ln -fs ~/.dotfiles/fum/config.jsonc ~/.config/fum/config.jsonc
 
 touch ~/.zshrc_profile
 
