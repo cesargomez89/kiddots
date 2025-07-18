@@ -10,7 +10,8 @@ return {
     "williamboman/mason-lspconfig.nvim",
     lazy = false,
     opts = {
-      auto_install = true,
+      automatic_installation = true,
+      ensure_installed = { "gopls", "ruby_lsp", "rubocop" }
     },
   },
   {
@@ -21,6 +22,8 @@ return {
 
       local lspconfig = require("lspconfig")
       lspconfig.ruby_lsp.setup({ capabilities = capabilities })
+      lspconfig.rubocop.setup({ capabilities = capabilities })
+      lspconfig.gopls.setup({ capabilities = capabilities })
 
       vim.diagnostic.config({
         update_in_insert = false,
@@ -47,9 +50,8 @@ return {
       vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {})
 
       vim.api.nvim_create_autocmd("BufWritePre", {
-        buffer = buffer,
         callback = function()
-          vim.lsp.buf.format { async = false }
+          vim.lsp.buf.format { async = true }
         end
       })
     end,
