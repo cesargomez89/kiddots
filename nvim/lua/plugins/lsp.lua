@@ -11,7 +11,13 @@ return {
     lazy = false,
     opts = {
       automatic_installation = true,
-      ensure_installed = { "gopls", "ruby_lsp", "rubocop" }
+      ensure_installed = {
+        "gopls",
+        "ruby_lsp",
+        "rubocop",
+        "tsserver",
+        "eslint"
+      }
     },
   },
   {
@@ -23,7 +29,14 @@ return {
       local lspconfig = require("lspconfig")
       lspconfig.ruby_lsp.setup({ capabilities = capabilities })
       lspconfig.rubocop.setup({ capabilities = capabilities })
-      lspconfig.gopls.setup({ capabilities = capabilities })
+      lspconfig.gopls.setup({
+        capabilities = capabilities,
+        settings = {
+          gopls = {
+            staticcheck = true,
+          }
+        }
+      })
 
       vim.diagnostic.config({
         update_in_insert = false,
