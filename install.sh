@@ -64,7 +64,7 @@ ln -fs ~/.dotfiles/nvim ~/.config
 ln -fs ~/.dotfiles/kitty ~/.config
 ln -fs ~/.dotfiles/git/gitconfig ~/.gitconfig
 ln -fs ~/.dotfiles/starship/starship.toml ~/.config/starship.toml
-ln -fs ~/.dotfiles/fum/config.jsonc ~/.config/fum/config.jsonc
+ln -fs ~/.dotfiles/fum/ ~/.config/fum
 
 touch ~/.zshrc_profile
 
