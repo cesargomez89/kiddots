@@ -17,11 +17,6 @@ return {
         "ruby_lsp",
         "rubocop",
         "eslint",
-        "stimulus_ls",
-        "ts_ls",
-        "eslint",
-        "astro",
-        "prismals",
         "dockerls",
       }
     },
@@ -35,11 +30,7 @@ return {
       local lspconfig = require("lspconfig")
       lspconfig.ruby_lsp.setup({ capabilities = capabilities })
       lspconfig.rubocop.setup({ capabilities = capabilities })
-      lspconfig.stimulus_ls.setup({ capabilities = capabilities })
       lspconfig.eslint.setup({ capabilities = capabilities })
-      lspconfig.ts_ls.setup({ capabilities = capabilities })
-      lspconfig.astro.setup({ capabilities = capabilities })
-      lspconfig.prismals.setup({ capabilities = capabilities })
       lspconfig.dockerls.setup({ capabilities = capabilities })
       lspconfig.lua_ls.setup({ capabilities = capabilities })
 
