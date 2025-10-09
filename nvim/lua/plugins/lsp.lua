@@ -27,14 +27,13 @@ return {
     config = function()
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-      local lspconfig = require("lspconfig")
-      lspconfig.ruby_lsp.setup({ capabilities = capabilities })
-      lspconfig.rubocop.setup({ capabilities = capabilities })
-      lspconfig.eslint.setup({ capabilities = capabilities })
-      lspconfig.dockerls.setup({ capabilities = capabilities })
-      lspconfig.lua_ls.setup({ capabilities = capabilities })
+      vim.lsp.config('lua_ls', { capabilities = capabilities, })
+      vim.lsp.config('ruby_lsp', { capabilities = capabilities, })
+      vim.lsp.config('rubocop', { capabilities = capabilities, })
+      vim.lsp.config('eslint', { capabilities = capabilities, })
+      vim.lsp.config('dockerls', { capabilities = capabilities, })
 
-      lspconfig.gopls.setup({
+      vim.lsp.config('gopls', {
         capabilities = capabilities,
         settings = {
           gopls = {
@@ -42,6 +41,7 @@ return {
           }
         }
       })
+
 
       vim.diagnostic.config({
         update_in_insert = false,
