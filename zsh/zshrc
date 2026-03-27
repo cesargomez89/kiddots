@@ -11,13 +11,13 @@ WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
 setopt appendhistory
 
-# load all the files in .dotfiles/zsh/aliases
-for file in ~/.dotfiles/zsh/aliases/*.zsh; do
+# load all the files in $HOME/.dotfiles/zsh/aliases
+for file in $HOME/.dotfiles/zsh/aliases/*.zsh; do
     source $file
 done
 
-# load all the files in .dotfiles/zsh/functions
-for file in ~/.dotfiles/zsh/functions/*.zsh; do
+# load all the files in $HOME/.dotfiles/zsh/functions
+for file in $HOME/.dotfiles/zsh/functions/*.zsh; do
     source $file
 done
 
