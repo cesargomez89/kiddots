@@ -5,17 +5,25 @@ return {
     "L3MON4D3/LuaSnip",
     "rafamadriz/friendly-snippets",
     "Huijiro/blink-cmp-supermaven",
+    "milanglacier/minuet-ai.nvim",
   },
   opts = {
     snippets = {
       preset = "luasnip",
     },
     sources = {
-      default = { "supermaven", "lsp", "snippets", "buffer", "path" },
+      default = { "supermaven", "lsp", "snippets", "buffer", "path", "minuet" },
       providers = {
         supermaven = {
           name = "supermaven",
           module = "blink-cmp-supermaven",
+        },
+        minuet = {
+          name = "minuet",
+          module = "minuet.blink",
+          async = true,
+          timeout_ms = 3000,
+          score_offset = 50,
         },
       },
     },
