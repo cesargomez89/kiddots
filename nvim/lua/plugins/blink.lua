@@ -40,7 +40,12 @@ return {
 						local handle = io.popen("nc -z localhost 8081 > /dev/null 2>&1 && echo 'up' || echo 'down'")
 						local res = handle:read("*a"):gsub("%s+", "")
 						handle:close()
-						return res == "up"
+						local local_running = res == "up"
+
+						local api_key = os.getenv("OPENROUTER_API_KEY")
+						local has_api_key = api_key and api_key ~= ""
+
+						return local_running or has_api_key
 					end,
 				},
 			},
