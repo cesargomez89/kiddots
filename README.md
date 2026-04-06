@@ -59,6 +59,62 @@ curl -s https://raw.githubusercontent.com/cesargomez89/kiddots/main/install.sh |
 - Comprehensive set of shell aliases
 - Detailed alias documentation available in [ALIASES.md](ALIASES.md)
 
+### Zsh Shortcuts
+
+#### Shell
+| Shortcut | Command | Description |
+|----------|---------|-------------|
+| `c` | `clear` | Clear terminal |
+| `v` | `nvim` | Open Neovim |
+| `ip` | `curl -s ifconfig.me` | Get public IP |
+| `localip` | `hostname -I \| awk '{print $1}'` | Get local IP |
+| `tml` | `tmux list-sessions` | List tmux sessions |
+| `tmk` | `tmux kill-session -t $1` | Kill tmux session |
+
+#### Eza (ls replacements)
+| Shortcut | Command | Description |
+|----------|---------|-------------|
+| `ls` | `eza --icons=auto --hyperlink --group-directories-first` | List files with icons |
+| `la` | `eza -la` | List all files including hidden |
+
+#### Kitty Sessions
+| Shortcut | Command | Description |
+|----------|---------|-------------|
+| `ks` | `ksession basic` | Switch to basic session |
+| `ksd` | `ksession docker` | Switch to docker session |
+| `ksg` | `ksession git` | Switch to git session |
+
+#### Git
+| Shortcut | Command | Description |
+|----------|---------|-------------|
+| `g` | `git` | Git command |
+| `gb` | `git branch` | List branches |
+| `gbc` | `git checkout -b` | Create and checkout new branch |
+| `gbd` | `git branch --delete` | Delete branch |
+| `gc` | `git commit --verbose` | Commit with verbose diff |
+| `gca` | `git commit --verbose --all` | Commit all files |
+| `gco` | `git checkout` | Checkout branch/file |
+| `gf` | `git fetch` | Fetch from remote |
+| `gl` | `git log` | View commit log |
+| `glg` | `git log --graph` | View graph log |
+| `gm` | `git merge` | Merge branch |
+| `gp` | `git push` | Push to remote |
+| `gpf` | `git push --force-with-lease` | Force push safely |
+| `gr` | `git rebase` | Rebase onto branch |
+| `gs` | `git stash` | Stash changes |
+| `gsp` | `git stash pop` | Pop stashed changes |
+| `gws` | `git status --short` | Quick status |
+
+#### Docker
+| Shortcut | Command | Description |
+|----------|---------|-------------|
+| `dk` | `docker` | Docker command |
+| `dkps` | `docker ps` | List running containers |
+| `dkc` | `docker compose` | Docker compose |
+| `dkcu` | `docker compose up` | Start services |
+| `dkcU` | `docker compose up -d` | Start services detached |
+| `dkcd` | `docker compose down` | Stop services |
+
 ### Neovim Configuration
 
 #### Core Setup
@@ -71,8 +127,51 @@ curl -s https://raw.githubusercontent.com/cesargomez89/kiddots/main/install.sh |
   - [Avante.nvim](https://github.com/yetone/avante.nvim)
 
 #### Keyboard Shortcuts
-- **Leader Key**: Space
-- **Neotree Toggle**: `leader + fe`
+
+- **Leader Key**: Space (`<leader>`)
+
+#### File Navigation
+| Shortcut | Action | Description |
+|----------|--------|-------------|
+| `<C-p>` | Telescope | Find files in project |
+| `<leader>ff` | Telescope find_files | Fuzzy find files |
+| `<leader>fg` | Telescope live_grep | Live grep in project |
+| `<leader>fb` | Telescope buffers | Switch between buffers |
+| `<leader>fh` | Telescope help_tags | Search help tags |
+| `<leader>fe` | Neotree toggle | Toggle file explorer |
+
+#### LSP (Language Server Protocol)
+| Shortcut | Action | Description |
+|----------|--------|-------------|
+| `K` | vim.lsp.buf.hover | Show hover information |
+| `<leader>gd` | vim.lsp.buf.definition | Go to definition |
+| `<leader>gr` | vim.lsp.buf.references | Show references |
+| `<leader>ca` | vim.lsp.buf.code_action | Show code actions |
+| `<leader>rn` | vim.lsp.buf.rename | Rename symbol |
+
+#### AI & Code Completion
+| Shortcut | Action | Description |
+|----------|--------|-------------|
+| `<Tab>` | nvim-cmp | Next completion item |
+| `<S-Tab>` | nvim-cmp | Previous completion item |
+| `<Enter>` | nvim-cmp | Accept completion |
+| `<C-a>` | Opencode | Ask AI for selection |
+| `<C-x>` | Opencode | Execute action |
+| `<C-.>` | Opencode | Toggle Opencode panel |
+| `go` | Opencode | Add range to Opencode |
+| `<leader>aa` | Avante | Open AI chat |
+
+#### Text Editing
+| Shortcut | Action | Description |
+|----------|--------|-------------|
+| `gq` | Conform | Format code |
+| `+` | vim.nvim.inc | Increment number |
+| `-` | vim.nvim.decre | Decrement number |
+
+#### Search & Replace
+| Shortcut | Action | Description |
+|----------|--------|-------------|
+| `<leader>S` | Spectre | Search & replace in project
 
 #### AI Chat
 
