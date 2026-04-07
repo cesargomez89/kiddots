@@ -19,7 +19,7 @@ return {
 				"eslint",
 				"dockerls",
 				-- "stylua",
-				"prettier",
+				-- "prettier",
 			},
 		},
 	},
