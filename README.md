@@ -133,11 +133,10 @@ curl -s https://raw.githubusercontent.com/cesargomez89/kiddots/main/install.sh |
 #### File Navigation
 | Shortcut | Action | Description |
 |----------|--------|-------------|
-| `<C-p>` | Telescope | Find files in project |
-| `<leader>ff` | Telescope find_files | Fuzzy find files |
-| `<leader>fg` | Telescope live_grep | Live grep in project |
-| `<leader>fb` | Telescope buffers | Switch between buffers |
-| `<leader>fh` | Telescope help_tags | Search help tags |
+| `<C-p>` | Snacks picker.files | Find files in project |
+| `<leader>ff` | Snacks picker.files | Fuzzy find files |
+| `<leader>fg` | Snacks picker.git_files | Find git files |
+| `<leader>fb` | Snacks picker.buffers | Switch between buffers |
 | `<leader>fe` | Neotree toggle | Toggle file explorer |
 
 #### LSP (Language Server Protocol)
@@ -171,7 +170,8 @@ curl -s https://raw.githubusercontent.com/cesargomez89/kiddots/main/install.sh |
 #### Search & Replace
 | Shortcut | Action | Description |
 |----------|--------|-------------|
-| `<leader>S` | Spectre | Search & replace in project
+| `<leader>rS` | Spectre | Search & replace in project |
+| `<leader>rw` | Spectre (visual) | Replace word under cursor |
 
 #### AI Chat
 

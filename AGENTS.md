@@ -279,3 +279,4 @@ Before committing changes:
 - Neovim uses **nvim-cmp** for completion with multiple AI sources
 - The prompt uses **Starship** with Eza for modern `ls`
 - All shell configurations are loaded dynamically from the `zsh/` directory
+- Always update README.md after adding new shortcuts

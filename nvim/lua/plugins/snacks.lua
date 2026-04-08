@@ -183,6 +183,13 @@ return {
 			desc = "Buffers",
 		},
 		{
+			"<C-p>",
+			function()
+				Snacks.picker.files()
+			end,
+			desc = "Find Files",
+		},
+		{
 			"<leader>ff",
 			function()
 				Snacks.picker.files()
@@ -477,13 +484,6 @@ return {
 				Snacks.scratch()
 			end,
 			desc = "Toggle Scratch Buffer",
-		},
-		{
-			"<leader>S",
-			function()
-				Snacks.scratch.select()
-			end,
-			desc = "Select Scratch Buffer",
 		},
 		{
 			"<leader>un",
