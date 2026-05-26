@@ -29,8 +29,8 @@ source ~/.antidote/antidote.zsh
 antidote load
 
 # history substring search
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
+bindkey $'\e[A' history-substring-search-up
+bindkey $'\e[B' history-substring-search-down
 HISTORY_SUBSTRING_SEARCH_FUZZY=1
 HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
 
