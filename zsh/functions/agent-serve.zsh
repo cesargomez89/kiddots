@@ -2,10 +2,11 @@ function agent-serve() {
   local model="unsloth/Qwen3.6-35B-A3B-MTP-GGUF"
   local port="${1:-8082}"
 
+    # --spec-draft-n-min 0.75 \
   llama-server \
     -hf "$model" \
     --port "$port" \
-    -fitt 800 \
+    -fitt 700 \
     -c 65536 \
     -n 16384 \
     -fa on \
@@ -16,12 +17,13 @@ function agent-serve() {
     -ctkd q8_0 \
     -ctvd q8_0 \
     -ctxcp 64 \
-    -b 1024 \
-    -ub 1024 \
+    -b 2048 \
+    -ub 2048 \
     --no-mmap \
     --no-mmproj \
     --spec-type draft-mtp \
     --spec-draft-n-max 2 \
+    --reasoning on \
     --chat-template-kwargs '{"preserve_thinking": true}' \
     --temp 0.6 \
     --top-p 0.95 \
