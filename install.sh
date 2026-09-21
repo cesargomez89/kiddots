@@ -65,6 +65,7 @@ ln -fs ~/.dotfiles/kitty ~/.config
 ln -fs ~/.dotfiles/git/gitconfig ~/.gitconfig
 ln -fs ~/.dotfiles/starship/starship.toml ~/.config/starship.toml
 ln -fs ~/.dotfiles/fum/ ~/.config/fum
+ln -fs ~/.dotfiles/claude/statusline.sh ~/.claude/statusline.sh
 
 touch ~/.zshrc_profile
 

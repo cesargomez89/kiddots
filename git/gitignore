@@ -25,3 +25,5 @@ tags.lock
 package-lock.json
 .solargraph.yml
 .irb_history
+
+**/.claude/settings.local.json
