@@ -66,6 +66,8 @@ ln -fs ~/.dotfiles/git/gitconfig ~/.gitconfig
 ln -fs ~/.dotfiles/starship/starship.toml ~/.config/starship.toml
 ln -fs ~/.dotfiles/fum/ ~/.config/fum
 ln -fs ~/.dotfiles/claude/statusline.sh ~/.claude/statusline.sh
+ln -fs ~/.dotfiles/claude/settings.json ~/.claude/settings.json
+ln -fs ~/.dotfiles/claude/CLAUDE.md ~/.claude/CLAUDE.md
 
 touch ~/.zshrc_profile
 

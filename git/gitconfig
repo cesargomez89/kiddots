@@ -6,3 +6,15 @@
   helper = credential-osxkeychain
 [init]
 	defaultBranch = main
+[user]
+	name = Cesar Gomez
+	email = cesargomez89@gmail.com
+[credential "https://github.com"]
+	helper = 
+	helper = !/nix/store/dy3z33r5g2qpw68jmzdrw78hsy4rhnn5-gh-2.100.0/bin/.gh-wrapped auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/nix/store/dy3z33r5g2qpw68jmzdrw78hsy4rhnn5-gh-2.100.0/bin/.gh-wrapped auth git-credential
+[url "https://github.com/"]
+	insteadOf = ssh://git@github.com/
+	insteadOf = git@github.com:

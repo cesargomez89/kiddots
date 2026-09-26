@@ -1,0 +1,44 @@
+{
+  "env": {
+    "WIKI_ROOT": "/Users/cesar/scribdinc/scribd-wiki"
+  },
+  "model": "opus[1m]",
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh",
+    "padding": 0,
+    "refreshInterval": 10
+  },
+  "enabledPlugins": {
+    "sentry@ai-market": true,
+    "clickup@ai-market": true,
+    "quality@ai-market": true,
+    "investigation@ai-market": true,
+    "monitoring@ai-market": true,
+    "planning@ai-market": true,
+    "superpowers@superpowers-marketplace": true,
+    "global@ai-market": true,
+    "test@synced": false,
+    "observability@synced": false,
+    "release@synced": false,
+    "development@synced": false
+  },
+  "extraKnownMarketplaces": {
+    "ai-market": {
+      "source": {
+        "source": "github",
+        "repo": "cesargomez89/ai-market"
+      },
+      "autoUpdate": true
+    },
+    "superpowers-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "obra/superpowers-marketplace"
+      }
+    }
+  },
+  "effortLevel": "medium",
+  "theme": "dark",
+  "verbose": false
+}
