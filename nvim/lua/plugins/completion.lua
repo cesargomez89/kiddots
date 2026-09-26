@@ -54,7 +54,7 @@ return {
           -- { name = "supermaven", group_index = 2, max_item_count = 3 },
           { name = "cmp_ai",  group_index = 2, max_item_count = 3 },
           { name = "luasnip", group_index = 2, max_item_count = 3 },
-          { name = "lsp",     group_index = 2, max_item_count = 3 },
+          { name = "nvim_lsp", group_index = 2, max_item_count = 3 },
           { name = "buffer",  group_index = 2, max_item_count = 5 },
           { name = "path",    group_index = 5 },
         }),

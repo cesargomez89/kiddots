@@ -2,7 +2,7 @@
   "env": {
     "WIKI_ROOT": "/Users/cesar/scribdinc/scribd-wiki"
   },
-  "model": "opus[1m]",
+  "model": "opus",
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh",

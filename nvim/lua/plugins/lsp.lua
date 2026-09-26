@@ -10,7 +10,6 @@ return {
     "williamboman/mason-lspconfig.nvim",
     lazy = false,
     opts = {
-      automatic_installation = true,
       ensure_installed = {
         "lua_ls",
         "gopls",
@@ -27,11 +26,11 @@ return {
     config = function()
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-      vim.lsp.config('lua_ls', { capabilities = capabilities, })
-      vim.lsp.config('ruby_lsp', { capabilities = capabilities, })
-      vim.lsp.config('rubocop', { capabilities = capabilities, })
-      vim.lsp.config('eslint', { capabilities = capabilities, })
-      vim.lsp.config('dockerls', { capabilities = capabilities, })
+      vim.lsp.config('lua_ls', { capabilities = capabilities })
+      vim.lsp.config('ruby_lsp', { capabilities = capabilities })
+      vim.lsp.config('rubocop', { capabilities = capabilities })
+      vim.lsp.config('eslint', { capabilities = capabilities })
+      vim.lsp.config('dockerls', { capabilities = capabilities })
 
       vim.lsp.config('gopls', {
         capabilities = capabilities,
@@ -42,28 +41,34 @@ return {
         }
       })
 
+      vim.lsp.enable({ 'lua_ls', 'gopls', 'ruby_lsp', 'rubocop', 'eslint', 'dockerls' })
 
       vim.diagnostic.config({
         update_in_insert = false,
         virtual_text = {
-          prefix = "",
+          prefix = "",
           spacing = 1,
+        },
+        signs = {
+          text = {
+            [vim.diagnostic.severity.ERROR] = "",
+            [vim.diagnostic.severity.WARN] = "",
+            [vim.diagnostic.severity.INFO] = "",
+            [vim.diagnostic.severity.HINT] = "",
+          },
+          numhl = {
+            [vim.diagnostic.severity.ERROR] = "DiagnosticSignError",
+            [vim.diagnostic.severity.WARN] = "DiagnosticSignWarn",
+            [vim.diagnostic.severity.INFO] = "DiagnosticSignInfo",
+            [vim.diagnostic.severity.HINT] = "DiagnosticSignHint",
+          },
         },
       })
 
-      for _, diag in ipairs({ "Error", "Warn", "Info", "Hint" }) do
-        vim.fn.sign_define("DiagnosticSign" .. diag, {
-          text = "",
-          texthl = "DiagnosticSign" .. diag,
-          linehl = "",
-          numhl = "DiagnosticSign" .. diag,
-        })
-      end
-
-      vim.keymap.set("n", "K", vim.lsp.buf.hover, {desc = "Hover definition"})
-      vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {desc = "Go to definition"})
-      vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {desc = "Show references"})
-      vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {desc= "Format code"})
+      vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover definition" })
+      vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+      vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { desc = "Show references" })
+      vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, { desc = "Format code" })
       vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
       vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {})
 

@@ -1,22 +1,30 @@
+local parsers = {
+  "go",
+  "ruby",
+  "javascript",
+  "typescript",
+  "html",
+  "css",
+  "json",
+  "yaml",
+  "toml",
+  "lua",
+}
+
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    branch = "main",
-    dependencies = { "neovim-treesitter/treesitter-parser-registry" },
     lazy = false,
-    build = ":TSUpdate",
+    build = function()
+      require("nvim-treesitter").install(parsers)
+    end,
     config = function()
-      require("nvim-treesitter").install {
-        "go",
-        "ruby",
-        "javascript",
-        "typescript",
-        "html",
-        "css",
-        "json",
-        "yaml",
-        "toml",
-      }
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = parsers,
+        callback = function()
+          vim.treesitter.start()
+        end,
+      })
     end,
   }
 }
