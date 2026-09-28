@@ -27,3 +27,5 @@ package-lock.json
 .irb_history
 
 **/.claude/settings.local.json
+devenv.*
+.devenv*
