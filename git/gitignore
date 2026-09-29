@@ -29,3 +29,5 @@ package-lock.json
 **/.claude/settings.local.json
 devenv.*
 .devenv*
+.env*
+.mcp.json
