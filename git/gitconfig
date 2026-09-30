@@ -9,3 +9,5 @@
 [user]
 	name = Cesar Gomez
 	email = cesargomez89@gmail.com
+[url "git@github.com:"]
+	insteadOf = https://github.com/
