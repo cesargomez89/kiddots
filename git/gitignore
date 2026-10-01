@@ -30,4 +30,6 @@ package-lock.json
 devenv.*
 .devenv*
 .env*
+data/GeoIP2-City.mmdb
 .mcp.json
+.wiki
