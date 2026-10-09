@@ -21,7 +21,8 @@
     "test@synced": false,
     "observability@synced": false,
     "release@synced": false,
-    "development@synced": false
+    "development@synced": false,
+    "ruby-lsp@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "ai-market": {

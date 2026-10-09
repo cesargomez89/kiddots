@@ -29,7 +29,9 @@ package-lock.json
 **/.claude/settings.local.json
 devenv.*
 .devenv*
+data/GeoIP2-City.mmdb
 .env*
 data/GeoIP2-City.mmdb
 .mcp.json
 .wiki
+opencode.json

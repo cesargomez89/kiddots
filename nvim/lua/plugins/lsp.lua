@@ -13,8 +13,6 @@ return {
       ensure_installed = {
         "lua_ls",
         "gopls",
-        "ruby_lsp",
-        "rubocop",
         "eslint",
         "dockerls",
       }
@@ -28,7 +26,12 @@ return {
 
       vim.lsp.config('lua_ls', { capabilities = capabilities })
       vim.lsp.config('ruby_lsp', { capabilities = capabilities })
-      vim.lsp.config('rubocop', { capabilities = capabilities })
+      -- ruby-lsp and rubocop come from the project's devenv shell, not Mason: a Mason install
+      -- hardcodes the Ruby it was built with, and the Gemfile pins the rubocop CI uses.
+      vim.lsp.config('rubocop', {
+        capabilities = capabilities,
+        cmd = { 'bundle', 'exec', 'rubocop', '--lsp' },
+      })
       vim.lsp.config('eslint', { capabilities = capabilities })
       vim.lsp.config('dockerls', { capabilities = capabilities })
 
