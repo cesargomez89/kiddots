@@ -68,6 +68,9 @@ ln -fs ~/.dotfiles/fum/ ~/.config/fum
 ln -fs ~/.dotfiles/claude/statusline.sh ~/.claude/statusline.sh
 ln -fs ~/.dotfiles/claude/settings.json ~/.claude/settings.json
 ln -fs ~/.dotfiles/claude/CLAUDE.md ~/.claude/CLAUDE.md
+mkdir -p ~/.gemini/antigravity-cli ~/.gemini/config
+ln -fs ~/.dotfiles/antigravity/settings.json ~/.gemini/antigravity-cli/settings.json
+ln -fs ~/.dotfiles/antigravity/AGENTS.md ~/.gemini/config/AGENTS.md
 
 touch ~/.zshrc_profile
 

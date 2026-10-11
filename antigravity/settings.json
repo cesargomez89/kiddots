@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "command(*)",
+      "read_url(*)",
+      "mcp(*)"
+    ],
+    "ask": [
+      "command(rm -rf)",
+      "command(git push --force)",
+      "command(git reset --hard)"
+    ],
+    "deny": [
+      "command(sudo)",
+      "command(rm -rf /)",
+      "command(rm -rf ~)",
+      "command(rm -rf /*)",
+      "write_file(.git/)",
+      "write_file(/Users/*/.ssh)"
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh",
+    "padding": 0,
+    "refreshInterval": 10
+  },
+  "trustedWorkspaces": [
+    "/Users/cesar/projects/dotflakes",
+    "/Users/cesar/.dotfiles"
+  ]
+}
