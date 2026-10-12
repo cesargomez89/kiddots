@@ -1,0 +1,28 @@
+{
+  "mcpServers": {
+    "atlassian": {
+      "disabled": false,
+      "serverUrl": "https://mcp.atlassian.com/v2/mcp"
+    },
+    "clickup": {
+      "serverUrl": "https://mcp.clickup.com/mcp"
+    },
+    "datadog": {
+      "disabled": false,
+      "serverUrl": "https://mcp.datadoghq.com/v1/mcp?toolsets=core,dashboards,alerting,apm,error-tracking,rum,ddsql,software-delivery"
+    },
+    "llm_wiki": {
+      "args": [
+        "llm-wiki-mcp",
+        "serve"
+      ],
+      "command": "uvx",
+      "env": {
+        "WIKI_ROOT": "/Users/cesar/scribdinc/scribd-wiki"
+      }
+    },
+    "sentry": {
+      "serverUrl": "https://mcp.sentry.dev/mcp"
+    }
+  }
+}
