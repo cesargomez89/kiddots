@@ -23,15 +23,7 @@ tags.tmp
 tags.temp
 tags.lock
 package-lock.json
-.solargraph.yml
 .irb_history
 
 **/.claude/settings.local.json
-devenv.*
-.devenv*
-data/GeoIP2-City.mmdb
 .env*
-data/GeoIP2-City.mmdb
-.mcp.json
-.wiki
-opencode.json

@@ -72,6 +72,7 @@ mkdir -p ~/.gemini/antigravity-cli ~/.gemini/config
 ln -fs ~/.dotfiles/antigravity/settings.json ~/.gemini/antigravity-cli/settings.json
 ln -fs ~/.dotfiles/antigravity/AGENTS.md ~/.gemini/config/AGENTS.md
 ln -fs ~/.dotfiles/antigravity/mcp_config.json ~/.gemini/config/mcp_config.json
+ln -fs ~/.dotfiles/claude/CLAUDE.md ~/.gemini/GEMINI.md
 
 touch ~/.zshrc_profile
 
