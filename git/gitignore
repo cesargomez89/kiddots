@@ -25,5 +25,4 @@ tags.lock
 package-lock.json
 .irb_history
 
-**/.claude/settings.local.json
 .env*
