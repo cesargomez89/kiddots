@@ -22,7 +22,8 @@ return {
       vim.api.nvim_create_autocmd("FileType", {
         pattern = parsers,
         callback = function()
-          vim.treesitter.start()
+          -- the parser may not be installed yet (:TSInstall), highlighting is optional
+          pcall(vim.treesitter.start)
         end,
       })
     end,
