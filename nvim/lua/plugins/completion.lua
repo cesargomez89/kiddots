@@ -28,7 +28,6 @@ return {
       "hrsh7th/cmp-path",
       "onsails/lspkind.nvim",
       "saadparwaiz1/cmp_luasnip",
-      -- "zbirenbaum/copilot-cmp",
     },
     config = function()
       local cmp = require('cmp')
@@ -50,9 +49,6 @@ return {
           fetching_timeout = 2000,
         },
         sources = cmp.config.sources({
-          -- { name = "copilot", group_index = 2 },
-          -- { name = "supermaven", group_index = 2, max_item_count = 3 },
-          { name = "cmp_ai",  group_index = 2, max_item_count = 3 },
           { name = "luasnip", group_index = 2, max_item_count = 3 },
           { name = "nvim_lsp", group_index = 2, max_item_count = 3 },
           { name = "buffer",  group_index = 2, max_item_count = 5 },
@@ -77,10 +73,6 @@ return {
             maxwidth = {
               menu = 50,
               abbr = 50,
-            },
-            symbol_map = {
-              Copilot = "",
-              Supermaven = "󱐋",
             },
             ellipsis_char = '...',
             show_labelDetails = true,
