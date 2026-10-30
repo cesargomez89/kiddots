@@ -3,6 +3,7 @@
 ## Memory
 - Always get confirmation from the user before adding or editing memories.
 - Short memories go directly as inline entries in MEMORY.md, not as separate files. Only create a file when the content is too long to fit on one line.
+- Always give presedence to AGENTS.md over CLAUDE.md, if you load CLAUDE.md let the user know immediately.
 
 ## Writing Style
 - Never use em dashes or unicode arrow characters. Use a comma, colon, or restructure the sentence instead. `->` is fine as an arrow.
