@@ -7,18 +7,8 @@ return {
     end,
   },
   {
-    "mason-org/mason-lspconfig.nvim",
-    lazy = false,
-    opts = {
-      ensure_installed = {
-        "lua_ls",
-        "gopls",
-        "eslint",
-        "dockerls",
-      }
-    },
-  },
-  {
+    -- servers are enabled below with vim.lsp.enable; install them once with
+    -- :MasonInstall lua-language-server gopls eslint-lsp dockerfile-language-server
     "neovim/nvim-lspconfig",
     lazy = false,
     config = function()
