@@ -7,13 +7,12 @@ return {
     require("catppuccin").setup({
       transparent_background = true,
       integrations = {
-        cmp = true,
+        blink_cmp = true,
         gitsigns = true,
         mason = true,
         neotree = true,
         telescope = true,
         treesitter = true,
-        treesitter_context = true,
         native_lsp = {
           enabled = true,
           virtual_text = {

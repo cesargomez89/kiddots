@@ -2,19 +2,6 @@ return {
   'nvim-telescope/telescope.nvim',
   dependencies = {
     'nvim-lua/plenary.nvim',
-    {
-      'nvim-pack/nvim-spectre',
-      config = function()
-        local spectre = require('spectre')
-
-        spectre.setup()
-
-        vim.keymap.set('n', '<leader>S', spectre.open, { desc = 'Spectre: search & replace in project' })
-        vim.keymap.set('n', '<leader>Sw', function()
-          spectre.open_visual({ select_word = true })
-        end, { desc = 'Spectre: replace word under cursor' })
-      end
-    },
   },
   config = function()
     local builtin = require('telescope.builtin')

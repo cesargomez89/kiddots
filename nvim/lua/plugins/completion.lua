@@ -21,71 +21,44 @@ return {
     end,
   },
   {
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "onsails/lspkind.nvim",
-      "saadparwaiz1/cmp_luasnip",
+    "saghen/blink.cmp",
+    version = "1.*",
+    dependencies = { "L3MON4D3/LuaSnip" },
+    opts = {
+      keymap = {
+        preset = "none",
+        ["<C-b>"] = { "scroll_documentation_up", "fallback" },
+        ["<C-f>"] = { "scroll_documentation_down", "fallback" },
+        ["<C-Space>"] = { "show", "fallback" },
+        ["<C-e>"] = { "cancel", "fallback" },
+        ["<CR>"] = { "accept", "fallback" },
+        ["<Tab>"] = { "select_next", "fallback" },
+        ["<S-Tab>"] = { "select_prev", "fallback" },
+      },
+      completion = {
+        list = { selection = { preselect = false, auto_insert = false } },
+        menu = { border = "rounded" },
+        documentation = { auto_show = true, window = { border = "rounded" } },
+      },
+      snippets = { preset = "luasnip" },
+      sources = {
+        default = { "snippets", "lsp", "buffer", "path" },
+        providers = {
+          snippets = { max_items = 3 },
+          -- no fallbacks so buffer words show next to LSP items, like the old nvim-cmp setup
+          lsp = { max_items = 3, fallbacks = {} },
+          buffer = { max_items = 5 },
+        },
+      },
+      cmdline = {
+        sources = function()
+          local type = vim.fn.getcmdtype()
+          if type == "/" or type == "?" then
+            return { "buffer" }
+          end
+          return {}
+        end,
+      },
     },
-    config = function()
-      local cmp = require('cmp')
-      local lspkind = require('lspkind')
-
-      vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
-
-      cmp.setup({
-        snippet = {
-          expand = function(args)
-            require("luasnip").lsp_expand(args.body)
-          end,
-        },
-        window = {
-          completion = cmp.config.window.bordered(),
-          documentation = cmp.config.window.bordered(),
-        },
-        performance = {
-          fetching_timeout = 2000,
-        },
-        sources = cmp.config.sources({
-          { name = "luasnip", group_index = 2, max_item_count = 3 },
-          { name = "nvim_lsp", group_index = 2, max_item_count = 3 },
-          { name = "buffer",  group_index = 2, max_item_count = 5 },
-          { name = "path",    group_index = 5 },
-        }),
-        mapping = cmp.mapping.preset.insert({
-          ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-          ['<C-f>'] = cmp.mapping.scroll_docs(4),
-          ['<C-Space>'] = cmp.mapping.complete(),
-          ['<C-e>'] = cmp.mapping.abort(),
-          ['<CR>'] = cmp.mapping.confirm({ select = false }),
-          ['<Tab>'] = cmp.mapping.select_next_item({
-            behavior = cmp.SelectBehavior.Select,
-          }),
-          ['<S-Tab>'] = cmp.mapping.select_prev_item({
-            behavior = cmp.SelectBehavior.Select,
-          }),
-        }),
-        formatting = {
-          format = lspkind.cmp_format({
-            mode = 'symbol',
-            maxwidth = {
-              menu = 50,
-              abbr = 50,
-            },
-            ellipsis_char = '...',
-            show_labelDetails = true,
-          })
-        },
-      })
-
-      cmp.setup.cmdline({ '/', '?' }, {
-        mapping = cmp.mapping.preset.cmdline(),
-        sources = {
-          { name = 'buffer' }
-        }
-      })
-    end,
   },
 }
