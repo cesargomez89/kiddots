@@ -65,14 +65,15 @@ ln -fs ~/.dotfiles/kitty ~/.config
 ln -fs ~/.dotfiles/git/gitconfig ~/.gitconfig
 ln -fs ~/.dotfiles/starship/starship.toml ~/.config/starship.toml
 ln -fs ~/.dotfiles/fum/ ~/.config/fum
+mkdir -p ~/.claude ~/.gemini/antigravity-cli ~/.gemini/config ~/.pi/agent
 ln -fs ~/.dotfiles/claude/statusline.sh ~/.claude/statusline.sh
 ln -fs ~/.dotfiles/claude/settings.json ~/.claude/settings.json
-ln -fs ~/.dotfiles/claude/CLAUDE.md ~/.claude/CLAUDE.md
-mkdir -p ~/.gemini/antigravity-cli ~/.gemini/config
+ln -fs ~/.dotfiles/agents/AGENTS.md ~/.claude/CLAUDE.md
 ln -fs ~/.dotfiles/antigravity/settings.json ~/.gemini/antigravity-cli/settings.json
-ln -fs ~/.dotfiles/antigravity/AGENTS.md ~/.gemini/config/AGENTS.md
+ln -fs ~/.dotfiles/agents/AGENTS.md ~/.gemini/config/AGENTS.md
 ln -fs ~/.dotfiles/antigravity/mcp_config.json ~/.gemini/config/mcp_config.json
-ln -fs ~/.dotfiles/claude/CLAUDE.md ~/.gemini/GEMINI.md
+ln -fs ~/.dotfiles/agents/AGENTS.md ~/.gemini/GEMINI.md
+ln -fs ~/.dotfiles/agents/AGENTS.md ~/.pi/agent/AGENTS.md
 
 touch ~/.zshrc_profile
 
