@@ -1,0 +1,11 @@
+onboarding = false
+
+[ui.toast]
+delivery = "terminal"
+
+[ui]
+status_indicators = "dots"
+
+[theme]
+name = "catppuccin"
+auto_switch = false

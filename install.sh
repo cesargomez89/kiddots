@@ -155,6 +155,7 @@ link_path "$DOTFILES/kitty"                         "$HOME/.config/kitty"
 link_path "$DOTFILES/git/gitconfig"                 "$HOME/.gitconfig"
 link_path "$DOTFILES/starship/starship.toml"        "$HOME/.config/starship.toml"
 link_path "$DOTFILES/fum"                           "$HOME/.config/fum"
+link_path "$DOTFILES/herdr/config.toml"             "$HOME/.config/herdr/config.toml"
 
 link_path "$DOTFILES/claude/statusline.sh"          "$HOME/.claude/statusline.sh"
 link_path "$DOTFILES/claude/settings.json"          "$HOME/.claude/settings.json"
