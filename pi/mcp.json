@@ -1,0 +1,36 @@
+{
+  "mcpServers": {
+    "clickup": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://mcp.clickup.com/mcp"
+      ]
+    },
+    "atlassian": {
+      "type": "http",
+      "url": "https://mcp.atlassian.com/v2/mcp"
+    },
+    "datadog": {
+      "type": "http",
+      "url": "https://mcp.datadoghq.com/v1/mcp?toolsets=core,dashboards,alerting,apm,error-tracking,rum,ddsql,software-delivery"
+    },
+    "llm_wiki": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": [
+        "llm-wiki-mcp",
+        "serve"
+      ],
+      "env": {
+        "WIKI_ROOT": "${WIKI_ROOT}"
+      }
+    },
+    "sentry": {
+      "type": "http",
+      "url": "https://mcp.sentry.dev/mcp"
+    }
+  }
+}
