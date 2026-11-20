@@ -26,3 +26,5 @@ package-lock.json
 .irb_history
 
 .env*
+
+**/.claude/settings.local.json
