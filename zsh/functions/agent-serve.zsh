@@ -1,17 +1,18 @@
 function agent-serve() {
-  local model="unsloth/Qwen3.6-35B-A3B-MTP-GGUF"
+  local model="unsloth/gemma-4-12B-it-qat-GGUF:UD-Q4_K_XL"
   local port="${1:-8082}"
 
-    # --spec-draft-n-min 0.75 \
+  # The MTP drafter (mtp-gemma-4-12B-it.gguf) lives in the same repo and
+  # should auto-download with -hf. If not, download it and pass
+  # --model-draft <path>. Tune --spec-draft-n-max between 1 and 6.
   llama-server \
     -hf "$model" \
     --port "$port" \
     -fitt 700 \
-    -c 65536 \
+    -c 131072 \
     -n 16384 \
     -fa on \
     -np 1 \
-    --n-cpu-moe 16 \
     -ctk q8_0 \
     -ctv q8_0 \
     -ctkd q8_0 \
@@ -19,16 +20,14 @@ function agent-serve() {
     -ctxcp 64 \
     -b 2048 \
     -ub 2048 \
-    --no-mmap \
+    -lm none \
     --no-mmproj \
     --spec-type draft-mtp \
-    --spec-draft-n-max 2 \
+    --spec-draft-n-max 4 \
+    --spec-draft-p-min 0.7 \
     --reasoning on \
-    --chat-template-kwargs '{"preserve_thinking": true}' \
-    --temp 0.6 \
+    --chat-template-kwargs '{"enable_thinking": true}' \
+    --temp 1.0 \
     --top-p 0.95 \
-    --top-k 20 \
-    --min-p 0.0 \
-    --presence-penalty 0.0 \
-    --repeat-penalty 1.0
-  }
+    --top-k 64
+}
