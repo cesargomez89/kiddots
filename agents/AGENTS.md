@@ -25,6 +25,7 @@
 
 ## Git
 - Never add Co-authored-by lines when committing.
+- Use conventional commits for all commit messages.
 
 ## Files
 - Never delete a file without an explicit request from the user or without asking for confirmation first.
