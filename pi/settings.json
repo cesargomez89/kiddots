@@ -7,7 +7,6 @@
   },
   "packages": [
     "https://github.com/cesargomez89/ai-market.git",
-    "npm:pi-web-access",
     "npm:pi-hashline-edit-pro",
     "npm:pi-lens"
   ],
