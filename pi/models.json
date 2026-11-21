@@ -1,0 +1,25 @@
+{
+  "providers": {
+    "llama-cpp": {
+      "baseUrl": "http://localhost:8082/v1",
+      "api": "openai-completions",
+      "apiKey": "noop",
+      "models": [
+        {
+          "id": "qwen3.6-35B-A3B",
+          "name": "Qwen 3.6 35B A3B (Local)",
+          "reasoning": true,
+          "input": ["text"],
+        },
+        {
+          "id": "gemma-4-12B-it-qat",
+          "name": "Gemma 4 12B QAT MTP (Local)",
+          "reasoning": true,
+          "contextWindow": 131072,
+          "maxTokens": 16384,
+          "input": ["text"],
+        }
+      ]
+    }
+  }
+}

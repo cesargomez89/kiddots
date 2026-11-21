@@ -168,6 +168,7 @@ link_path "$DOTFILES/agents/AGENTS.md"              "$HOME/.gemini/GEMINI.md"
 link_path "$DOTFILES/agents/AGENTS.md"              "$HOME/.pi/agent/AGENTS.md"
 link_path "$DOTFILES/pi/settings.json"              "$HOME/.pi/agent/settings.json"
 link_path "$DOTFILES/pi/mcp.json"                   "$HOME/.pi/agent/mcp.json"
+link_path "$DOTFILES/pi/models.json"                "$HOME/.pi/agent/models.json"
 
 # local, machine-specific shell additions (never truncate an existing file)
 run touch "$HOME/.zshrc_profile"
