@@ -88,7 +88,6 @@ function agent-serve-128k() {
     --spec-draft-n-max 2 \
     --spec-draft-p-min 0.7 \
     --reasoning on \
-    --chat-template-kwargs '{"enable_thinking": true}' \
     --temp 1.0 \
     --top-p 0.95 \
     --top-k 64
