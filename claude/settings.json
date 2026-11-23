@@ -1,6 +1,6 @@
 {
   "env": {
-    "WIKI_ROOT": "/Users/cesar/scribdinc/scribd-wiki"
+    "WIKI_ROOT": "~/scribdinc/scribd-wiki"
   },
   "hooks": {
     "UserPromptSubmit": [
