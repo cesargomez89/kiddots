@@ -2,6 +2,14 @@
   "env": {
     "WIKI_ROOT": "~/scribdinc/scribd-wiki"
   },
+  "permissions": {
+    "deny": [
+      "Skill(migrate-quick-notify)",
+      "Skill(pr-test-checker)",
+      "Skill(rspec-transactional-fixtures)",
+      "Skill(validate-with-devkube)"
+    ]
+  },
   "hooks": {
     "UserPromptSubmit": [
       {
@@ -72,7 +80,7 @@
   },
   "enabledPlugins": {
     "sentry@ai-market": true,
-    "clickup@ai-market": true,
+    "clickup@ai-market": false,
     "quality@ai-market": true,
     "investigation@ai-market": true,
     "monitoring@ai-market": true,
