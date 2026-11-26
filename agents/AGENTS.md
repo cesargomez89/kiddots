@@ -1,48 +1,59 @@
 # Global Agent Instructions
 
 ## Memory
-- Always get confirmation from the user before adding or editing persistent memories or instructions.
-- Short memories go directly as inline entries in MEMORY.md, not as separate files. Only create a file when the content is too long to fit on one line.
-- Keep recorded notes and learnings concise and actionable.
-- If both AGENTS.md and CLAUDE.md are loaded, AGENTS.md takes precedence.
+- Get user confirmation before adding or editing persistent memories or instructions.
+- Short, concise, actionable memories go inline in MEMORY.md. Create a file only when too long for one line.
+- AGENTS.md has precedence over CLAUDE.md. Never load CLAUDE.md if AGENTS.md exists; if you do, tell the user.
 
 ## Writing Style
-- Never use em dashes or unicode arrow characters. Use a comma, colon, or restructure the sentence instead. `->` is fine as an arrow.
-- Docs, reports and long explanations MUST be readable by a skimmer in 30 seconds:
-  - Answer first (BLUF): put a 1-4 line TL;DR right under the H1 covering what it is, the impact, and the status or decision. Write it last and only restate what the body proves.
-  - Plain language (ISO 24495-1): use active voice, keep sentences to 25 words or fewer, and define acronyms the first time they appear.
-  - Procedures (ASD-STE100): use numbered steps in imperative mood, one action per step, 20 words or fewer per step.
-  - Obligations (RFC 2119): write MUST / SHOULD / MAY in capitals in plans, decisions and acceptance criteria.
-  - One doc = one kind of content (Diátaxis): explanation, reference or how-to. Don't mix them.
-  - Headings state the finding ("Missing rescue causes 500 on cancel"), not the slot ("Root cause"). Fixed template sections can keep their generic names.
-  - Use tables for numbers, comparisons, options and before/after. Use bullets for lists. Use short paragraphs for reasoning, never a chain of "because" bullets.
-  - Use GitHub callouts sparingly, at most one per section: `[!NOTE]` for the TL;DR, `[!WARNING]` for risks or root causes, `[!TIP]` for the recommended action, `[!IMPORTANT]` for open questions.
+- No em dashes or unicode arrows (`->` is fine).
+- Docs and reports MUST be skimmable in 30 seconds:
+  - TL;DR of 1-4 lines under the H1 (what, impact, status). Write it last.
+  - Headings state the finding ("Missing rescue causes 500 on cancel"), not the slot ("Root cause").
+  - Active voice, sentences of 25 words or fewer, acronyms defined on first use.
+  - Procedures: numbered imperative steps, one action and 20 words or fewer each.
+  - MUST / SHOULD / MAY in capitals for obligations.
+  - One doc = one kind of content: explanation, reference or how-to.
+  - Tables for numbers and comparisons, bullets for lists, short paragraphs for reasoning.
+  - At most one GitHub callout per section.
 
 ## Output Format
-- Never create HTML artifacts or published pages unless explicitly requested. For documents, reports, and summaries that need saving: write as markdown files. For short responses that don't need saving: print markdown in the console.
-- Always use mermaid syntax for diagrams in markdown or any output.
-- Mermaid diagrams: 9 nodes or fewer (split bigger flows). Pick the type by the question: what calls what -> `sequenceDiagram`, which path is taken -> `flowchart`, what states exist -> `stateDiagram-v2`, when -> `timeline`/`gantt`, how objects relate -> `classDiagram`.
+- No HTML artifacts or published pages unless explicitly requested. Save docs and reports as markdown files; print short answers in the console.
+- Diagrams use mermaid, 9 nodes or fewer. Type by question: calls -> `sequenceDiagram`, path -> `flowchart`, states -> `stateDiagram-v2`, time -> `timeline`/`gantt`, relations -> `classDiagram`.
 
 ## Git
 - Never add Co-authored-by lines when committing.
 - Use conventional commits for all commit messages.
+- Never push, open a PR, or post a comment or message to GitHub, Slack or any service unless explicitly asked in that session. Show the draft and ask first.
+- PR descriptions: use the repo's template and keep AI notes at the bottom.
 
 ## Files
 - Never delete a file without an explicit request from the user or without asking for confirmation first.
 
-## CLI Tools
-Prefer these over standard alternatives when available:
+## Setup
+- Dotfiles: `~/.dotfiles` (repo `kiddots`). `~/.claude/CLAUDE.md`, `settings.json` and `statusline.sh` are symlinks into it. Edit global instructions at `~/.dotfiles/agents/AGENTS.md`.
+- NixOS and macOS flake config: `~/projects/dotflakes`.
+- ai-market skills: edit only in `~/projects/ai-market`.
+- llm-wiki-mcp: edit only in `~/projects/llm-wiki-mcp`. Recommend improvements to the user when you spot them.
 
-- `rg` instead of `grep`
-- `fd` instead of `find`
-- `eza` instead of `ls`
-- `sd` instead of `sed` for simple substitutions
+## MCP and data tools
+- LLM Wiki MCP: before investigating a bug, ticket or unfamiliar code, check it first. Use `find_by_id` for ticket or Sentry IDs (PAY-*, RAILS-*), `search` for keywords, `read_index` to browse, `read_page` to read.
+- Skills auto-write investigations and plans. Write concepts, decisions and tool docs manually: `write_page` + `add_index_entry` + `append_log` + `add_external_ref`, and `create_adr` for decisions.
+- Never reference the wiki in anything that leaves the session. Other people have no context for it.
+- Databricks SQL: use ai-market `scripts/dbsql.sh` (read-only, CLI only, no MCP) with `$DATABRICKS_PROFILE` and `$DATABRICKS_CATALOG`, never hardcoded catalogs. Data lags ~24h. Expired login: `databricks auth login --profile $DATABRICKS_PROFILE`. On timeout never retry: use `WHERE id IN (...)` or bound by `created_at`.
+- Stripe MCP has multiple accounts. Pick the one matching the local entity.
+
+## CLI Tools
+
+available CLI tools you can use when you consider it the best tool:
+- `rg` grep
+- `fd` find
+- `eza` list files
+- `sd` for simple substitutions
 - `jq` for JSON parsing and transformation
 - `yq` for YAML parsing and transformation
-- `uv` instead of `pip` or `python -m venv` for Python packages
+- `uv` for Python packages
 - `gh` for GitHub operations
-
-Use these when the task calls for it:
 - `ast-grep` for structural code search or refactoring
 - `difftastic` for semantic diffs
 - `just` for running project tasks (check for a `justfile` first)
