@@ -7,7 +7,8 @@
         "-y",
         "mcp-remote",
         "https://mcp.clickup.com/mcp"
-      ]
+      ],
+      "enabled": false
     },
     "atlassian": {
       "type": "http",
