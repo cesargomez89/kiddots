@@ -31,10 +31,12 @@
 - Never delete a file without an explicit request from the user or without asking for confirmation first.
 
 ## Setup
-- Dotfiles: `~/.dotfiles` (repo `kiddots`). `~/.claude/CLAUDE.md`, `settings.json` and `statusline.sh` are symlinks into it. Edit global instructions at `~/.dotfiles/agents/AGENTS.md`.
-- NixOS and macOS flake config: `~/projects/dotflakes`.
-- ai-market skills: edit only in `~/projects/ai-market`.
-- llm-wiki-mcp: edit only in `~/projects/llm-wiki-mcp`. Recommend improvements to the user when you spot them.
+Personal setup. Recommend improvements to the user when you spot them.
+
+- Dotfiles: `~/.dotfiles` (repo `kiddots`) symlinked configs and personal setup.
+- NixOS and macOS nix flake OS level config: `~/projects/dotflakes`.
+- ai-market skills: personal user skills, edit only in `~/projects/ai-market`.
+- llm-wiki-mcp: wiki mcp, edit only in `~/projects/llm-wiki-mcp`.
 
 ## MCP and data tools
 - LLM Wiki MCP: before investigating a bug, ticket or unfamiliar code, check it first. Use `find_by_id` for ticket or Sentry IDs (PAY-*, RAILS-*), `search` for keywords, `read_index` to browse, `read_page` to read.
